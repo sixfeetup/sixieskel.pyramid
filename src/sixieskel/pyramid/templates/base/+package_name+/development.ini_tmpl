@@ -4,7 +4,7 @@
 ###
 
 [app:main]
-use = egg:.
+use = egg:$package_name
 
 pyramid.reload_templates = true
 pyramid.debug_authorization = false
@@ -12,7 +12,10 @@ pyramid.debug_notfound = false
 pyramid.debug_routematch = false
 pyramid.default_locale_name = en
 pyramid.includes = 
+#if $include_debug_bar
     pyramid_debugtoolbar
+#end if
+
 
 # By default, the toolbar only appears for clients from IP addresses
 # '127.0.0.1' and '::1'.
@@ -33,7 +36,7 @@ port = 6543
 ###
 
 [loggers]
-keys = root, 
+keys = root, $package_name
 
 [handlers]
 keys = console
@@ -45,10 +48,10 @@ keys = generic
 level = INFO
 handlers = console
 
-[logger_]
+[logger_$package_name]
 level = DEBUG
 handlers =
-qualname = 
+qualname = $package_name
 
 [handler_console]
 class = StreamHandler

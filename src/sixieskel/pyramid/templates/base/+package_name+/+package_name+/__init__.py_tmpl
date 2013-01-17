@@ -9,7 +9,7 @@ def main(global_config, **settings):
     # Includes for any packages that hook into configuration.
     config.include('pyramid_tm')
 #if $include_debug_bar
-    config.includes('pyramid_debugtoolbar')
+    config.include('pyramid_debugtoolbar')
 #end if
 
     # Configuring URLs
