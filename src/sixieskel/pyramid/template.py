@@ -64,3 +64,12 @@ class SixieBasePyramid(BaseTemplate):
     category = "Six Feet Up"
     vars = basic_vars
     use_cheetah = True
+
+
+class SixieAlchemyPyramid(BaseTemplate):
+    _template_dir = "templates/alchemy"
+    summary = "Sixie Pyramid/SQLAlchemy package"
+    help = "A Pyramid package including SQLAlchemy scaffolding."
+    category = "Six Feet Up"
+    vars = basic_vars
+    use_cheetah = True

@@ -1,0 +1,49 @@
+import os
+
+from setuptools import setup, find_packages
+
+version = ${repr($version) or "0.0"}
+
+here = os.path.abspath(os.path.dirname(__file__))
+README = open(os.path.join(here, 'README.txt')).read()
+CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
+
+requires = [
+    'pyramid',
+#if $include_debug_bar == True
+    'pyramid_debugtoolbar',
+#end if
+    'pyramid_tm',
+    'SQLAlchemy',
+    'zope.sqlalchemy',
+    'waitress',
+    ]
+
+setup(
+      name=${repr($package_name)},
+      version=version,
+      description=${description or $empty},
+      long_description=README + '\n\n' + CHANGES,
+      classifiers=[
+        "Programming Language :: Python",
+        "Framework :: Pyramid",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+        ],
+      author=${repr($author) or $empty},
+      author_email=${repr($author_email) or $empty},
+      url=${repr($url) or $empty},
+      keywords=${repr($keywords) or $empty},
+      packages=find_packages(),
+      include_package_data=True,
+      zip_safe=False,
+      install_requires=requires,
+      tests_require=requires,
+      test_suite="$package_name",
+      entry_points="""\
+      [paste.app_factory]
+      main = $package_name:main
+      [console_scripts]
+      initialize_${$package_name}_db = ${$package_name}.scripts.initializedb:main
+      """,
+      )
