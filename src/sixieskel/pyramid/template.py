@@ -73,3 +73,12 @@ class SixieAlchemyPyramid(BaseTemplate):
     category = "Six Feet Up"
     vars = basic_vars
     use_cheetah = True
+
+
+class SixieZodbPyramid(BaseTemplate):
+    _template_dir = "templates/zodb"
+    summary = "Sixie Pyramid/ZODB package"
+    help = "A Pyramid package including ZODB scaffolding."
+    category = "Six Feet Up"
+    vars = basic_vars
+    use_cheetah = True

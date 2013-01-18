@@ -1,0 +1,27 @@
+[nosetests]
+match = ^test
+nocapture = 1
+cover-package = $package_name
+with-coverage = 1
+cover-erase = 1
+
+[compile_catalog]
+directory = $package_name/locale
+domain = $package_name
+statistics = true
+
+[extract_messages]
+add_comments = TRANSLATORS:
+output_file = $package_name/locale/..pot
+width = 80
+
+[init_catalog]
+domain = $package_name
+input_file = $package_name/locale/..pot
+output_dir = $package_name/locale
+
+[update_catalog]
+domain = $package_name
+input_file = $package_name/locale/..pot
+output_dir = $package_name/locale
+previous = true

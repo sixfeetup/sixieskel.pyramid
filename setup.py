@@ -46,8 +46,12 @@ setup(name='sixieskel.pyramid',
       [paste.paster_create_template]
       sfu_pyramid_basic = sixieskel.pyramid.template:SixieBasePyramid
       sfu_pyramid_alchemy = sixieskel.pyramid.template:SixieAlchemyPyramid
+      sfu_pyramid_zodb = sixieskel.pyramid.template:SixieZodbPyramid
+
       [pyramid.scaffold]
       sfu_pyramid_basic = sixieskel.pyramid.template:SixieBasePyramid
       sfu_pyramid_alchemy = sixieskel.pyramid.template:SixieAlchemyPyramid
+      sfu_pyramid_zodb = sixieskel.pyramid.template:SixieZodbPyramid
+
       """,
       )
