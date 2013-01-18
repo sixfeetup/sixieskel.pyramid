@@ -47,7 +47,13 @@ basic_vars = [
             'Include Pyramid Debug Bar?',
             default=False,
             modes=(EASY, EXPERT)
-        )
+        ),
+        StringVar(
+            'extends_package',
+            'Extend existing package',
+            default='',
+            modes=(EASY, EXPERT)
+        ),
     ]
 
 

@@ -12,6 +12,14 @@ def main(global_config, **settings):
     config.include('pyramid_debugtoolbar')
 #end if
 
+    \# Extending an existing package allows you to override
+    \# view mappings and other configuration details.
+#if $extends_package
+    config.include('$extends_package')
+#else
+    \# config.include('base_package_name')
+#end if
+
     # Configuring URLs
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')
