@@ -27,6 +27,10 @@ def main(global_config, **settings):
     \# config.include('base_package_name')
 #end if
 
+    \# overriding templates should be done as follows:
+    \# config.override_asset('base_package_name:templates/base.pt',
+    \#                       '${$package_name}:templates/override.pt')
+
     # Configuring URLs
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')
