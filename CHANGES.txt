@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0 (2013-18-01)
+----------------
+ * Add basic Pyramid package template
+ * Add SQAlchemy Pyramid package template
+ * Add ZODB Pyramid package template.
+
 0.1-dev (unreleased)
 --------------------
 
