@@ -20,7 +20,7 @@ requires = [
 setup(
       name=${repr($package_name)},
       version=version,
-      description=${description or $empty},
+      description="${description or $empty}",
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
         "Programming Language :: Python",
