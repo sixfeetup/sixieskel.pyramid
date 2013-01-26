@@ -1,4 +1,7 @@
 from pyramid.config import Configurator
+from pyramid.events import BeforeRender
+
+from .subscribers import registery_api
 
 
 def main(global_config, **settings):
@@ -24,6 +27,9 @@ def main(global_config, **settings):
 
     \# config.override_asset('base_package_name:templates/base.pt',
     \#                       '${$package_name}:templates/override.pt')
+
+    \# Add renderer subscribers.
+    config.add_subscriber(register_api, BeforeRender)
 
     # Configuring URLs
     config.add_static_view('static', 'static', cache_max_age=3600)

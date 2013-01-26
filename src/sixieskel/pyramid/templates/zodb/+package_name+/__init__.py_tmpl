@@ -1,6 +1,8 @@
 from pyramid.config import Configurator
+from pyramid.events import BeforeRender
 from pyramid_zodbconn import get_connection
 from .models import appmaker
+from .subscribers import register_api
 
 def root_factory(request):
     conn = get_connection(request)
@@ -31,6 +33,9 @@ def main(global_config, **settings):
 
     \# config.override_asset('base_package_name:templates/base.pt',
     \#                       '${$package_name}:templates/override.pt')
+
+    \# Add renderer subscribers.
+    config.add_subscriber(register_api, BeforeRender)
 
     # Configuring URLs
     config.add_static_view('static', 'static', cache_max_age=3600)
