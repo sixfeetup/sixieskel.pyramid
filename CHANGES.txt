@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.1 (2013-25-01)
+----------------
+ * Fix unquoted description field in setup.py
+ * Add TemplateAPI class and register the 'api' variable for all templates.
+
 1.0 (2013-18-01)
 ----------------
  * Add basic Pyramid package template
