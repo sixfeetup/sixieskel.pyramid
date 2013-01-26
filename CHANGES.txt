@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1 (2013-25-01)
+1.1 ()
 ----------------
  * Fix unquoted description field in setup.py
  * Add TemplateAPI class and register the 'api' variable for all templates.
